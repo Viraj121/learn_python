@@ -71,26 +71,11 @@ Testing ensures the quality and reliability of your code. With Python, you can c
 - [Pytest Official Docs](https://docs.pytest.org/en/stable/)
 - [Python Testing with Pytest - Real Python](https://realpython.com/pytest-python-testing/)
 
-Here’s a **cool Python testing demo video** to get inspired:
-
-[![Python Testing Demo](https://img.youtube.com/vi/VhNxzQHDV-4/0.jpg)](https://www.youtube.com/watch?v=VhNxzQHDV-4)
-
----
-
 ## 🌈 Fun Extras
 Here are some extra tools and techniques that make Python automation exciting:
 - **Web Scraping**: Use `BeautifulSoup` to gather data from the web.
 - **GUI Automation**: Use `PyAutoGUI` to automate desktop applications.
 - **Chatbots**: Create an automated assistant using Python and `ChatterBot`.
-
----
-
-## 🤝 Let's Connect
-Feel free to contribute, ask questions, or provide feedback!
-
-- **Email**: [your-email@example.com](mailto:your-email@example.com)
-- **LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/your-profile)
-- **GitHub**: [Your GitHub Profile](https://github.com/your-profile)
 
 ---
 
