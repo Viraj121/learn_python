@@ -22,15 +22,18 @@ driver = webdriver.Chrome(service=service, options=options)
 def get_distance_between_elements(driver, element1, element2):
     location1 = element1.location
     location2 = element2.location
-    return abs(location2['y'] - (location1['y'] + element1.size['height']))
+    return abs(location2['y'] - location1['y'])
 
 def highlight_element(driver, element):
     """Highlights a Selenium WebElement by adding a red border."""
-    driver.execute_script("arguments[0].style.border='3px solid red'", element)
+    driver.execute_script("arguments[0].style.border='2px solid red'", element)
 
 try:
     # Open the specified URL
-    url = "https://rtp.pixika.ai/v2/pdf/index.php?tt=1733996851&product=DIYCALENDAR&source=cam&objectKey=67572defac8fe0fe5&preview=stitch-done%27"
+
+    # url = "https://rtp.pixika.ai/v2/pdf/index.php?tt=1733996851&product=DIYCALENDAR&source=cam&objectKey=67572defac8fe0fe5&preview=stitch-done%27"
+    url="https://rtp.pixika.ai/v2/pdf/index.php?tt=1734966981&product=DIYCALENDAR&source=cam&objectKey=675d98737d8b8092b&preview=stitch-done"
+
     debug_message("Opening the URL")
     driver.get(url)
     time.sleep(5)  # Allow the page to load
@@ -71,12 +74,21 @@ try:
     distance = get_distance_between_elements(driver, feb_month_element, parent_div_element)
     debug_message(f"Calculated distance: {distance} pixels")
 
+# Convert the distance from pixels to millimeters (assuming 96 DPI)
+    def pixels_to_mm(pixels, dpi=96):
+        # 1 inch = 25.4 mm, and DPI = dots (pixels) per inch
+        return (pixels / dpi) * 25.4
+
+    distance_mm = pixels_to_mm(distance)
+    debug_message(f"Converted distance: {distance_mm:.2f} mm")
+    print(f"Distance in millimeters: {distance_mm:.2f} mm")
 
     # Check if the bleed measurement is correct
-    if 57 <= distance <= 61:
+    if distance_mm >= 13:  # Minimum 13 mm distance
         print("Bleed measure correct")
     else:
         print("Bleed measure incorrect")
+
 
     # Save the screenshot
     debug_message("Saving screenshot of the highlighted elements")
