@@ -16,7 +16,7 @@ options = Options()
 options.add_argument("--disable-gpu")
 options.add_argument("--window-size=1920,1080")
 # options.add_argument("--start-fullscreen")
-# options.add_argument("--headless")
+options.add_argument("--headless")
 
 service = Service()  
 driver = webdriver.Chrome(service=service, options=options)
@@ -36,8 +36,9 @@ def pixels_to_mm(pixels, dpi=96):
     return (pixels / dpi) * 25.4
 
 try:
-    url="https://rtp.pixika.ai/v2/pdf/index.php?tt=1735209761&product=DIYCALENDAR&source=cam&objectKey=67655b0757e577725&preview=stitch-done"
-    # url="https://rtp.pixika.ai/v2/pdf/index.php?tt=1734930378&product=DIYCALENDAR&source=cam&objectKey=6761887436e1df144&preview=stitch-done"
+
+    # url="https://rtp.pixika.ai/v2/pdf/index.php?tt=1735209761&product=DIYCALENDAR&source=cam&objectKey=67655b0757e577725&preview=stitch-done"
+    url="https://rtp.pixika.ai/v2/pdf/index.php?tt=1734930378&product=DIYCALENDAR&source=cam&objectKey=6761887436e1df144&preview=stitch-done"
     # url="https://rtp.pixika.ai/v2/pdf/index.php?tt=1735028631&product=DIYCALENDAR&source=cam&objectKey=67638b482d93e1863&preview=stitch-done"
     # url="https://rtp.pixika.ai/v2/pdf/index.php?tt=1735028631&product=DIYCALENDAR&source=cam&objectKey=67652c1d2bc923b13&preview=stitch-done"
     # url = "https://rtp.pixika.ai/v2/pdf/index.php?tt=1733996851&product=DIYCALENDAR&source=cam&objectKey=67572defac8fe0fe5&preview=stitch-done%27"
